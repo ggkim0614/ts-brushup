@@ -1,4 +1,5 @@
-import Counter from './components/counter';
+import Counter from './components/Counter';
+import { TodoList } from './components/TodoList';
 
 function App() {
 	return (
@@ -6,6 +7,7 @@ function App() {
 			<div>Long time no see</div>
 			<div>
 				<Counter />
+				<TodoList />
 			</div>
 		</>
 	);

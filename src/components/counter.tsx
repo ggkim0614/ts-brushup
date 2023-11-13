@@ -13,11 +13,11 @@ export default function Counter() {
 	}
 
 	return (
-		<div>
+		<CounterWrapper>
 			<CountNumber>{count}</CountNumber>
 			<CounterButton onClick={handleAdd}>Increment</CounterButton>
 			<CounterButton onClick={handleSubtract}>Decrement</CounterButton>
-		</div>
+		</CounterWrapper>
 	);
 }
 
@@ -38,6 +38,14 @@ const CounterButton = styled.button`
 
 const CountNumber = styled.p`
 	color: #ffffff;
-	font-size: 32px;
+	font-size: 48px;
 	font-weight: bold;
+	margin: 8px 0;
+	text-align: center;
+`;
+
+const CounterWrapper = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 `;
