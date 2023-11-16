@@ -14,6 +14,7 @@ export default function Counter() {
 
 	return (
 		<CounterWrapper>
+			<div>Counter</div>
 			<CountNumber>{count}</CountNumber>
 			<CounterButton onClick={handleAdd}>Increment</CounterButton>
 			<CounterButton onClick={handleSubtract}>Decrement</CounterButton>
