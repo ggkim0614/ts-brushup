@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Todo {
-	id: number;
-	task: string;
-}
+interface Todo {}
 
 export const TodoList: React.FC<Todo> = () => {
 	const [todos, setTodos] = React.useState<Todo[]>([]);
