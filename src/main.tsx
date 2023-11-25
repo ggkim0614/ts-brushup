@@ -9,10 +9,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<App />
 		<Canvas>
-			<ambientLight />
-			<pointLight position={[10, 10, 10]} />
-			<Box position={[-1.2, 0, 0]} />
-			<Box position={[1.2, 0, 0]} />
+			<ambientLight intensity={0.5} />
+			<spotLight
+				position={[10, 10, 10]}
+				angle={0.15}
+				penumbra={1}
+				decay={0}
+				intensity={Math.PI}
+			/>
+			<pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+			<Box position={[0, 0, 0]} />
 		</Canvas>
 	</React.StrictMode>
 );

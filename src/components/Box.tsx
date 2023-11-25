@@ -15,7 +15,8 @@ export default function Box(props: BoxProps) {
 	// SUBSCRIBE this component to the render-loop, and rotate the mesh every frame
 	useFrame((state, delta) => {
 		if (meshRef.current) {
-			meshRef.current.rotation.x += delta;
+			meshRef.current.rotation.x += delta / 2;
+			meshRef.current.rotation.y += delta / 2;
 		}
 	});
 
@@ -23,13 +24,15 @@ export default function Box(props: BoxProps) {
 		<mesh
 			{...props}
 			ref={meshRef}
-			scale={active ? 3 : 1}
+			scale={active ? 1.5 : 1}
 			onClick={() => setActive(!active)}
 			onPointerOver={() => setHovered(true)}
 			onPointerOut={() => setHovered(false)}
+			castShadow
+			receiveShadow
 		>
-			<boxGeometry args={[2, 2, 2]} />
-			<meshStandardMaterial color={hovered ? 'orange' : 'black'} />
+			<boxGeometry args={[3, 3, 3]} />
+			<meshStandardMaterial color={hovered ? '#EA3636' : '#E61616'} />
 		</mesh>
 	);
 }
